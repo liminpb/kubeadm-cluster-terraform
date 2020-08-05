@@ -36,7 +36,7 @@ Make sure your bastion host have the aws cli configured and  Terraform v0.12.26 
 
 * Clone the git repo to the bastion host:
 
-		https://github.com/liminpb/Kubeadm-Cluster-Spinnup.git
+		https://github.com/liminpb/kubeadm-cluster-terraform.git
 
 cd Kubeadm-aws
 
