@@ -1,0 +1,16 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+apiServer:
+  extraArgs:
+    cloud-provider: aws
+controlPlaneEndpoint: privatehostnameofyourmasterinstance
+controllerManager:
+  extraArgs:
+    cloud-provider: aws
+    configure-cloud-routes: "false"
+    allocate-node-cidrs: "true" 
+    cluster-cidr: 10.244.0.0/16 
+kubernetesVersion: stable
+networking:
+  dnsDomain: cluster.local
