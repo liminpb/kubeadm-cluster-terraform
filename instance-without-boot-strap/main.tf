@@ -59,9 +59,6 @@ resource "aws_key_pair" "terraform_ec2_key" {
   key_name = "terraform_ec2_key"
   public_key = "mypublicKey"
 }
-data "template_file" "myuserdata" {
-  template = "${file("${path.cwd}/template.tpl")}"
-}
 resource "aws_instance" "kubernetestest" {
   ami           = "ami-085925f297f89fce1"
   instance_type = "t2.xlarge"
@@ -76,7 +73,6 @@ resource "aws_instance" "kubernetestest" {
   delete_on_termination = "true"
 }
   key_name = "${aws_key_pair.terraform_ec2_key.key_name}"
-  user_data = "${data.template_file.myuserdata.template}"
   tags = {
    "kubernetes.io/cluster/myclustername" = "owned"
  }

@@ -36,7 +36,7 @@ Make sure your bastion host have the aws cli configured and  Terraform v0.12.26 
 
 * Clone the git repo to the bastion host:
 
-		https://github.com/liminpb/kubeadm-cluster-terraform.git
+      git clone http://git.spiralbean.com:8888/devops/kube-terra.git
 
 cd Kubeadm-aws
 
@@ -184,4 +184,3 @@ Then deploy the reset of them:
  Get the service list:
     
     kubect get svc
-# Kubeadm-Cluster-Spinnup

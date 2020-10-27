@@ -41,8 +41,7 @@ echo "Your VPC will be ready in a few minutes"
 sleep 5s
 
 terraform output security_group > ../securitygroup.txt
-terraform output subnets | awk {'print $1'} | sed '$d' | sed "1d" |  sed 's/^.//' | sed 's/..$//' | sed -n 1p > ../subnet.txt
-
+terraform output subnets | awk {'print $1'} |  sed '$d' | sed "1d" | sed 's/.$//' | sed -n 1p > ../subnet.txt
 cd ..
 
 subnetids=$(cat subnet.txt)
